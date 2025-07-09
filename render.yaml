@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: chatbot-app
-    env: python
-    buildCommand: ""
-    startCommand: python app.py
-    envVars:
-      - key: OPENAI_API_KEY
-        value: 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
