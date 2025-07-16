@@ -21,7 +21,7 @@
       });
       const data = await res.json();
       document.getElementById("chatlog").innerHTML += `<p><b>You:</b> ${message}</p>`;
-      document.getElementById("chatlog").innerHTML += `<p><b>AI:</b> ${data.response}</p>`;
+      document.getElementById("chatlog").innerHTML += `<p><b>AI:</b> ${data.reply}</p>`;
       document.getElementById("input").value = ""; 
     }
   
