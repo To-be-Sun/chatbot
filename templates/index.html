@@ -14,12 +14,24 @@
       const message = document.getElementById("input").value;
       const res = await fetch("/chat", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify({ message })
       });
       const data = await res.json();
-      document.getElementById("chatlog").innerHTML += `<p><b>You:</b> ${message}</p><p><b>AI:</b> ${data.reply}</p>`;
+      document.getElementById("chatlog").innerHTML += `<p><b>You:</b> ${message}</p>`;
+      document.getElementById("chatlog").innerHTML += `<p><b>AI:</b> ${data.response}</p>`;
+      document.getElementById("input").value = ""; 
     }
+  
+    document.getElementById("input").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault(); 
+        send();          
+      }
+    });
   </script>
+  
 </body>
 </html>
